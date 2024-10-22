@@ -19,7 +19,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.simats.pregahdm",
+      "permissions": ["INTERNET"]
     },
     "web": {
       "bundler": "metro",
@@ -33,9 +35,12 @@
       "typedRoutes": true
     },
     "extra": {
+      "API_SERVER_URL": "https://180.235.121.245:3000",
+      "API_SERVER_SOCKET": "https://180.235.121.245:8080",
       "eas": {
         "projectId": "2dd73252-c7cc-4cfb-acfe-bc1cfe2ab8ad"
       }
+
     }
   }
 }

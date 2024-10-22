@@ -5,15 +5,20 @@ const cors = require('cors');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const socketIO = require('socket.io')
+const https = require('https');
 const http = require('http')
 const app = express();
-const Server = http.createServer(app)
+const Server = https.createServer( app);
+// const Server = https.createServer(app)
 const port = 3000;
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 
-
+// // Load SSL certificate and key
+// const privateKey = fs.readFileSync('key.pem', 'utf8');
+// const certificate = fs.readFileSync('cert.pem', 'utf8');
+// const credentials = { key: privateKey, cert: certificate };
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const io = socketIO(Server, {
   cors: {
-    origin: 'http://localhost:19006', // Replace with your React Native app's URL
+    origin: 'https://180.235.121.245', // Replace with your React Native app's URL
     methods: ['GET', 'POST'],
   },
 });
@@ -38,7 +43,7 @@ Server.listen(8080, () => {
 }
 )
 app.use(cors({
-  origin: 'http://localhost:19006',
+  origin: 'https://180.235.121.245',
   
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,

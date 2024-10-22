@@ -2,7 +2,6 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, useWindowDimensions } 
 import React from 'react';
 import { Link } from 'expo-router';
  // Assuming this is a valid SVG image
-
 const Welcome = ({ navigation }) => {
   const { width, height } = useWindowDimensions(); // Dynamically get width and height
 

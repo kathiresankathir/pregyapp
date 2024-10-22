@@ -1,0 +1,38 @@
+{
+  "cli": {
+    "version": ">= 12.5.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk"  
+      },
+      "env": {
+        "API_SERVER_URL": "https://180.235.121.245:3000",  
+        "API_SERVER_SOCKET": "https://180.235.121.245:8080" 
+      }
+    },
+    "aab": { 
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "API_SERVER_URL": "https://180.235.121.245:3000",
+        "API_SERVER_SOCKET": "https://180.235.121.245:8080"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
